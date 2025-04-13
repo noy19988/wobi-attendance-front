@@ -1,0 +1,48 @@
+.wobi-sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .wobi-sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2563eb;
+  }
+  
+  .wobi-sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .wobi-sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #111827;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .wobi-sidebar-link:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .wobi-sidebar-link.active {
+    background-color: #2563eb;
+    color: white;
+  }
+  
