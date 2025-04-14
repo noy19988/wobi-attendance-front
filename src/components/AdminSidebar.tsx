@@ -66,7 +66,7 @@ const AdminSidebar = () => {
           }
         >
           <UserPlus size={20} />
-          <span>Create User</span>
+          <span>Create New User</span>
         </NavLink>
       </nav>
     </aside>

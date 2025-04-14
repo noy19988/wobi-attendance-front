@@ -15,6 +15,7 @@ const Login = () => {
       localStorage.setItem("token", res.token);
       localStorage.setItem("username", username);
       localStorage.setItem("role", res.role);
+      console.log("Token saved to localStorage:", localStorage.getItem("token"));
 
       if (res.role === "admin") {
         navigate("/admin");
