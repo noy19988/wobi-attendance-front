@@ -46,7 +46,7 @@ const AdminSidebar = () => {
           }
         >
           <UserRound size={20} />
-          <span>User Details</span>
+          <span>Admin Details</span>
         </NavLink>
 
         <NavLink

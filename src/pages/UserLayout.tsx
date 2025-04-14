@@ -18,7 +18,8 @@ const UserLayout = () => {
       <Sidebar />
       <div className="flex-1 flex flex-col">
         <Navbar username={username} />
-        <main className="p-6">
+        {}
+        <main className="p-6 flex-1" style={{ backgroundColor: "#f7fbff" }}>
           <Outlet />
         </main>
       </div>

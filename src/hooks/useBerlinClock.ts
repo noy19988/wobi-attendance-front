@@ -18,7 +18,11 @@ export const useBerlinClock = () => {
         "https://timeapi.io/api/Time/current/zone?timeZone=Europe/Berlin"
       );
       const { date, time } = response.data as { date: string; time: string };
-      setBerlinTime({ date, time });
+      
+      const currentTime = new Date(); 
+      const timeWithSeconds = `${time}:${currentTime.getSeconds().toString().padStart(2, '0')}`;
+
+      setBerlinTime({ date, time: timeWithSeconds });
     } catch (err) {
       console.error("Failed to fetch Berlin time:", err);
     }
@@ -26,7 +30,7 @@ export const useBerlinClock = () => {
 
   useEffect(() => {
     fetchTime();
-    const interval = setInterval(fetchTime, 1000); // update every second
+    const interval = setInterval(fetchTime, 1000); 
     return () => clearInterval(interval);
   }, []);
 
