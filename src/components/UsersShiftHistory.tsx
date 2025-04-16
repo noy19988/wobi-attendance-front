@@ -4,7 +4,7 @@ import * as XLSX from "xlsx";
 
 type Shift = ServiceShift;
 
-const AdminShiftHistory = () => {
+const UserShiftHistory = () => {
   const [selectedPeriod, setSelectedPeriod] = useState("Custom");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -12,7 +12,7 @@ const AdminShiftHistory = () => {
   const [error, setError] = useState("");
 
   const validateDates = (start: string, end: string): boolean => {
-    if (!start || !end) return true; 
+    if (!start || !end) return true;
     
     const startObj = new Date(start);
     const endObj = new Date(end);
@@ -64,11 +64,11 @@ const AdminShiftHistory = () => {
       switch (selectedPeriod) {
         case "Day": {
           const startOfDay = new Date(today);
-          startOfDay.setHours(0, 0, 0, 0); 
+          startOfDay.setHours(0, 0, 0, 0);  
           start = format(startOfDay);
         
           const endOfDay = new Date(today);
-          endOfDay.setHours(23, 59, 59, 999);  
+          endOfDay.setHours(23, 59, 59, 999); 
           end = format(endOfDay);
           break;
         }
@@ -180,9 +180,8 @@ const AdminShiftHistory = () => {
   };
 
   return (
-<div className="flex items-start justify-start min-h-screen bg-blue-50 pt-10 pl-10">
-  <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
-
+<div className="flex flex-col min-h-screen" style={{ backgroundColor: 'rgb(247, 251, 255)' }} pt-10 px-10>
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
         <h1 className="text-2xl font-bold text-gray-800">My Shifts History</h1>
         <p className="mt-2 text-gray-500">View your past shifts and analyze your working hours</p>
 
@@ -274,4 +273,4 @@ const AdminShiftHistory = () => {
     </div>
   );
 };
-export default AdminShiftHistory;
+export default UserShiftHistory;

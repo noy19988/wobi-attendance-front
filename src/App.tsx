@@ -2,11 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import AdminLayout from "./pages/AdminLayout";
 import AdminShiftHistory from "./components/AdminShiftHistory";
-import CreateUserPage from "./components/CreateUserPage";
-import ManageUsersPage from "./components/ManageUsersPage";
+import CreateUserPage from "./components/CreateDeleteUsersPage.js";
+import ManageUsersPage from "./components/ManageUsersShiftsPage.js";
 import UserLayout from "./pages/UserLayout";
 import UserDashboard from "./pages/Dashboard.js";
-import UserHistory from "./components/UserHistory";
+import UserShiftHistory from "./components/UsersShiftHistory.js";
 import ProfileDetails from "./components/ProfileDetails.js";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
         {}
         <Route path="/user" element={<UserLayout />}>
           <Route index element={<UserDashboard />} />
-          <Route path="history" element={<UserHistory />} />
+          <Route path="history" element={<UserShiftHistory />} />
           <Route path="profile" element={<ProfileDetails />} />
         </Route>
       </Routes>

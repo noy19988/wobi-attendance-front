@@ -7,13 +7,14 @@ const Dashboard = () => {
   const [isClockedIn, setIsClockedIn] = useState(false);
   const [clockInTime, setClockInTime] = useState<string | null>(null);
   const [clockOutTime, setClockOutTime] = useState<string | null>(null);
+  const [isProcessing, setIsProcessing] = useState(false); // 🔄 חדש
 
   useEffect(() => {
     const fetchShiftStatus = async () => {
       try {
         console.log("Fetching current shift...");
         const response = await getCurrentShift();
-        console.log("Response from /attendance/current:", response);  
+        console.log("Response from /attendance/current:", response);
 
         if (response.message === "Active shift found") {
           setIsClockedIn(true);
@@ -23,7 +24,7 @@ const Dashboard = () => {
           setClockInTime(null);
         }
       } catch (error) {
-        console.error("Failed to fetch current shift:", error);  
+        console.error("Failed to fetch current shift:", error);
         setIsClockedIn(false);
         setClockInTime(null);
       }
@@ -31,29 +32,34 @@ const Dashboard = () => {
 
     fetchShiftStatus();
   }, []);
-  
 
   const handleClockIn = async () => {
+    setIsProcessing(true);
     try {
       const response = await startShift();
-      console.log("Shift started:", response);  
+      console.log("Shift started:", response);
       setClockInTime(response.record?.timestamp || null);
-      setIsClockedIn(true); 
+      setIsClockedIn(true);
     } catch (error) {
       console.error("Failed to start shift:", error);
       alert("Could not start shift. Please try again later.");
+    } finally {
+      setIsProcessing(false);
     }
   };
 
   const handleClockOut = async () => {
+    setIsProcessing(true);
     try {
       const response = await endShift();
-      console.log("Shift ended:", response);  
+      console.log("Shift ended:", response);
       setClockOutTime(response.record?.timestamp || null);
-      setIsClockedIn(false); 
+      setIsClockedIn(false);
     } catch (error) {
       console.error("Failed to end shift:", error);
       alert("Could not end shift. Please try again later.");
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -93,14 +99,14 @@ const Dashboard = () => {
           <button
             className="clock-btn clock-in"
             onClick={handleClockIn}
-            disabled={isClockedIn}
+            disabled={isClockedIn || isProcessing}
           >
             <LogIn size={16} /> Start Shift
           </button>
           <button
             className="clock-btn clock-out"
             onClick={handleClockOut}
-            disabled={!isClockedIn}
+            disabled={!isClockedIn || isProcessing}
           >
             <LogOut size={16} /> End Shift
           </button>

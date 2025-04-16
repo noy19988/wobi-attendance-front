@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import {
-  LayoutDashboard,
+  RefreshCcw,
   Clock,
   UserRound,
   CalendarClock,
@@ -12,7 +12,7 @@ const Sidebar = () => {
     <aside className="wobi-sidebar">
       <div className="wobi-sidebar-logo">
         <CalendarClock size={28} />
-        <span>TimeTracker</span>
+        <span>ShiftTracker</span>
       </div>
 
       <nav className="wobi-sidebar-nav">
@@ -23,8 +23,8 @@ const Sidebar = () => {
             `wobi-sidebar-link ${isActive ? "active" : ""}`
           }
         >
-          <LayoutDashboard size={20} />
-          <span>Dashboard</span>
+          <RefreshCcw size={20} />
+          <span>Shift Entry & Exit</span>
         </NavLink>
 
         <NavLink

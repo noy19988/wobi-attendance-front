@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import {
-  LayoutDashboard,
+  RefreshCcw,
   UserPlus,
   CalendarClock,
   Clock,
@@ -14,7 +14,7 @@ const AdminSidebar = () => {
     <aside className="wobi-sidebar">
       <div className="wobi-sidebar-logo">
         <CalendarClock size={28} />
-        <span>TimeTracker</span>
+        <span>ShiftTracker</span>
       </div>
 
       <nav className="wobi-sidebar-nav">
@@ -25,8 +25,8 @@ const AdminSidebar = () => {
             `wobi-sidebar-link ${isActive ? "active" : ""}`
           }
         >
-          <LayoutDashboard size={20} />
-          <span>Dashboard</span>
+          <RefreshCcw size={20} />
+          <span>Shift Entry & Exit</span>
         </NavLink>
 
         <NavLink
@@ -36,7 +36,7 @@ const AdminSidebar = () => {
           }
         >
           <Clock size={20} />
-          <span>Shift History</span>
+          <span>Admin Shifts History</span>
         </NavLink>
 
         <NavLink
@@ -56,7 +56,7 @@ const AdminSidebar = () => {
           }
         >
           <Users size={20} />
-          <span>Manage Users</span>
+          <span>Manage Users Shifts</span>
         </NavLink>
 
         <NavLink
@@ -65,8 +65,8 @@ const AdminSidebar = () => {
             `wobi-sidebar-link ${isActive ? "active" : ""}`
           }
         >
-          <UserPlus size={20} />
-          <span>Create New User</span>
+          <UserPlus size={18.9} />
+          <span>Create & Delete User</span>
         </NavLink>
       </nav>
     </aside>

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../services/authService";
+import { loginUser } from "../api/authUserApi.js";
+import { CalendarClock } from "lucide-react";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -11,11 +12,9 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await loginUser(username, password);
-
       localStorage.setItem("token", res.token);
       localStorage.setItem("username", username);
       localStorage.setItem("role", res.role);
-      console.log("Token saved to localStorage:", localStorage.getItem("token"));
 
       if (res.role === "admin") {
         navigate("/admin");
@@ -29,11 +28,19 @@ const Login = () => {
   };
 
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
-        <h2 className="mb-6 text-center text-2xl font-bold text-gray-800">
-          Login to Your Account
-        </h2>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 px-4">
+      
+      <div className="mb-10 text-center">
+        <div className="flex items-center justify-center gap-2 text-blue-700">
+          <CalendarClock size={36} />
+          <h1 className="text-3xl font-bold">Welcome to ShiftTracker</h1>
+        </div>
+        <p className="mt-2 text-gray-600 text-sm">Employee Management System</p>
+      </div>
+
+      <div className="w-full max-w-md rounded-2xl bg-white p-10 shadow-xl">
+        <h2 className="text-2xl font-semibold text-center text-gray-700 mb-6">Login to your account</h2>
+
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="block text-sm font-medium text-gray-600">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { User } from "../types/user.js";
+import { User } from "../api/authUserApi.js";
 import "../style/user-profile.css";
 
 const ProfileDetails = () => {
@@ -60,7 +60,6 @@ const ProfileDetails = () => {
 
   return (
     <div className="profile-container">
-      {/* Tabs */}
       <div className="tabs-bar">
         <button
           onClick={() => setActiveTab("profile")}
@@ -113,7 +112,6 @@ const ProfileDetails = () => {
         </div>
       )}
 
-      {/* Password Change */}
       {activeTab === "password" && (
         <div className="card-box">
           <h2>Change Password</h2>

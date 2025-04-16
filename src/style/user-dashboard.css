@@ -1,107 +1,106 @@
 .user-shift-container {
-    padding: 1rem;
+    padding: 0.9rem;
     display: flex;
     justify-content: center;
-  }
-  
-  .user-shift-card {
+}
+
+.user-shift-card {
     background-color: #fff;
-    border-radius: 0.75rem;
+    border-radius: 0.7rem;
     border: 1px solid #e5e7eb;
-    padding: 1.5rem;
+    padding: 1.4rem;
     width: 100%;
-    max-width: 1000px;
-  }
-  
-  .user-shift-header {
+    max-width: 900px;
+}
+
+.user-shift-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  .user-shift-title {
-    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.user-shift-title {
+    font-size: 1.4rem;
     font-weight: 700;
     color: #111827;
-  }
-  
-  .user-shift-subtitle {
+}
+
+.user-shift-subtitle {
     color: #6b7280;
-    font-size: 0.95rem;
-  }
-  
-  .user-shift-badge {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+}
+
+.user-shift-badge {
+    font-size: 0.8rem;
     font-weight: 600;
     border-radius: 999px;
-    padding: 0.25rem 0.75rem;
+    padding: 0.225rem 0.675rem;
     background-color: #f3f4f6;
     color: #374151;
-  }
-  
-  .user-shift-badge.on {
+}
+
+.user-shift-badge.on {
     background-color: #d1fae5;
     color: #065f46;
-  }
-  
-  .user-shift-badge.off {
+}
+
+.user-shift-badge.off {
     background-color: #f3f4f6;
     color: #374151;
-  }
-  
-  .user-shift-timings {
+}
+
+.user-shift-timings {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .user-shift-time {
+    gap: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.user-shift-time {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
+    gap: 0.45rem;
+    margin-top: 0.225rem;
     font-weight: 500;
-    font-size: 0.95rem;
-  }
-  
-  .user-shift-buttons {
+    font-size: 0.85rem;
+}
+
+.user-shift-buttons {
     display: flex;
-    gap: 1rem;
-  }
-  
-  .clock-btn {
+    gap: 0.9rem;
+}
+
+.clock-btn {
     flex: 1;
-    padding: 0.75rem 1rem;
+    padding: 0.7rem 0.9rem;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.45rem;
     transition: 0.2s ease;
-  }
-  
-  .clock-in {
+}
+
+.clock-in {
     background-color: #2563eb;
     color: white;
-  }
-  
-  .clock-in:disabled {
+}
+
+.clock-in:disabled {
     background-color: #93c5fd;
-  }
-  
-  .clock-out {
+}
+
+.clock-out {
     background-color: #f9fafb;
     color: #6b7280;
     border: 1px solid #e5e7eb;
-  }
-  
-  .clock-out:disabled {
+}
+
+.clock-out:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-  }
-  
+}
