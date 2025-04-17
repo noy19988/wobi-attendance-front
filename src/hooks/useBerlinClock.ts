@@ -33,7 +33,7 @@ export const useBerlinClock = () => {
         source: "api",
       });
     } catch (err) {
-      console.warn("⚠️ Falling back to local time due to API error", err);
+      console.warn("Falling back to local time due to API error", err);
 
       const now = new Date();
       const localTime = now.toLocaleTimeString("de-DE", {
